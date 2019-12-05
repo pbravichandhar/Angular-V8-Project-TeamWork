@@ -22,7 +22,7 @@ export class PasswordValidationDirective {
       node.setAttribute('id', 'user-pass-error');
       node.appendChild(textnode);
       this.el.nativeElement.after(node);
-    } else  if (passRe.test(String(this.value))) {
+    } else  if (passRe.test(String(this.value)) && element) {
       element.remove && element.remove();
     }
   }

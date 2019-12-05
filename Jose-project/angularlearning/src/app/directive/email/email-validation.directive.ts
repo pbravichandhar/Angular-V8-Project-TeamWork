@@ -23,7 +23,7 @@ export class EmailValidationDirective {
       node.setAttribute('id', 'user-email-error');
       node.appendChild(textnode);
       this.el.nativeElement.after(node);
-    } else  if (re.test(String(this.value))) {
+    } else  if (re.test(String(this.value)) && element) {
       element.remove && element.remove();
     }
   }
