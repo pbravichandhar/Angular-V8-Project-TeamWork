@@ -1,21 +1,22 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
-import { DialogComponent } from './dialog/dialog.component'
+import { DialogComponent } from '../dialog/dialog.component'
 
-/**
- * @title Dialog Overview
- */
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class AppComponent {
+export class DashboardComponent {
   public userName = 'Tharini';
   animal: string;
   name: string;
 
   constructor(public dialog: MatDialog) { }
+
+  ngOnChanges() {
+    console.log('The dialog was closed');
+  }
 
   openDialog() {
     const dialogConfig = new MatDialogConfig();
@@ -31,8 +32,9 @@ export class AppComponent {
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
+      this.ngOnChanges(),
+        this.animal = result;
     });
   }
 }
+

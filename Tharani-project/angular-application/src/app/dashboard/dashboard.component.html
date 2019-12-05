@@ -1,0 +1,4 @@
+<button mat-raised-button (click)="openDialog()">Dialog Box</button>
+
+<app-employee-list [parentData]="userName" (childData)="message=$event"></app-employee-list>
+<h3>{{message}}</h3>
