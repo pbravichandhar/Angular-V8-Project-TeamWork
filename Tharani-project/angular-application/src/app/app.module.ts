@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 const modules = [
   MatButtonModule,
@@ -29,15 +31,17 @@ const modules = [
     EmployeeListComponent,
     EmployeeDetailComponent,
     DashboardComponent,
+    LoginDialogComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule, ...modules,
     HttpClientModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  entryComponents: [DialogComponent],
+  entryComponents: [DialogComponent, LoginDialogComponent],
   exports: [
     ...modules
   ],
