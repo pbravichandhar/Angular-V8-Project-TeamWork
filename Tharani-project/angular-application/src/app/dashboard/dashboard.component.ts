@@ -5,7 +5,7 @@ import { DialogComponent } from '../dialog/dialog.component'
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  // styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
   public userName = 'Tharini';
@@ -28,12 +28,10 @@ export class DashboardComponent {
       dialogConfig.data = {
         name: this.name, animal: this.animal
       }
-    // this.dialog.open(DialogComponent, dialogConfig);
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-      this.ngOnChanges(),
-        this.animal = result;
+      this.ngOnChanges()
     });
   }
 }

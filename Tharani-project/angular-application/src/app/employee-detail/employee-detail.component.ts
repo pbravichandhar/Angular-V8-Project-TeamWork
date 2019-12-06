@@ -10,7 +10,7 @@ import { EmployeeService } from '../employee.service';
   </ul>
   <button [routerLink]="['/dashboard']" ion-button button-icon icon-start>View List</button>
   `,
-  styleUrls: ['./employee-detail.component.css']
+  // styleUrls: ['./employee-detail.component.css']
 })
 export class EmployeeDetailComponent implements OnInit {
   public employees = [];
