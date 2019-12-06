@@ -19,11 +19,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
+import { EmailValidationDirective } from './directive/email/email-validation.directive';
+import { UsernameValidationDirective } from './directive/username/username-validation.directive';
+import { PasswordValidationDirective } from './directive/password/password-validation.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    EmailValidationDirective,
+    UsernameValidationDirective,
+    PasswordValidationDirective,
   ],
   imports: [
     BrowserModule,
