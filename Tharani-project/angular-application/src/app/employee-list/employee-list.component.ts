@@ -36,6 +36,10 @@ export class EmployeeListComponent {
     this.formGroup = this.formBuilder.group({
       'username': ['', Validators.required],
       'phone': ['', Validators.required],
+      // ['', Validators.compose([
+      //   Validators.required,
+      //   Validators.pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$')
+      // ])],
       'email': ['', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
