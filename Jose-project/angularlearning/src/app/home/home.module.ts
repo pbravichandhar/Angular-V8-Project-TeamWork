@@ -13,6 +13,7 @@ import { FirstComponent } from '../first/first.component';
 import { SecondComponent } from '../second/second.component';
 import { DrawerComponent } from '../components/drawer/drawer.component';
 import { SaideNavComponent } from '../components/saide-nav/saide-nav.component';
+import { TableComponents } from '../table/table.component';
 
 import {
   MatDialogModule,
@@ -21,8 +22,11 @@ import {
   MatNativeDateModule,
   MatIconModule,
   MatListModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatTableModule,
 } from '@angular/material';
+
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -37,7 +41,9 @@ import {
     MatNativeDateModule,
     MatIconModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   declarations: [
     HomeComponent,
@@ -48,6 +54,7 @@ import {
     SaideNavComponent,
     FirstComponent,
     SecondComponent,
+    TableComponents,
   ],
   entryComponents: [PopupComponent],
   bootstrap: [HomeComponent],

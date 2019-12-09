@@ -23,7 +23,11 @@ const routes: Routes = [
       {
         path: 'second',
         component: SecondComponent
-      }
+      },
+      // {
+      //   path: 'dashboard';
+
+      // }
     ]
   },
 ];
