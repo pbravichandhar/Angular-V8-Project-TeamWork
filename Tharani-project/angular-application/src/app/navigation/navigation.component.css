@@ -1,0 +1,11 @@
+.side-nav-height {
+    height: calc(100vh - 64px);
+}
+.side-nav-width{
+    width:145px;
+}
+.side-nav-center{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
