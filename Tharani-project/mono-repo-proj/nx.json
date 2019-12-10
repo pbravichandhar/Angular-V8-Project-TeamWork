@@ -25,6 +25,12 @@
     },
     "my-lib": {
       "tags": []
+    },
+    "main-proj-e2e": {
+      "tags": []
+    },
+    "main-proj": {
+      "tags": []
     }
   }
 }
