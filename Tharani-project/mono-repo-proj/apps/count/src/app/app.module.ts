@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { IncrementComponent } from './increment/increment.component';
 import { ComponentComponent } from '../../../../libs/lib-data/src/lib/component/component.component';
-import { MainComponent } from './main/main.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, IncrementComponent, ComponentComponent, MainComponent],
-  imports: [BrowserModule],
+  declarations: [AppComponent, IncrementComponent, ComponentComponent],
+  imports: [BrowserModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent, ComponentComponent]
 })
