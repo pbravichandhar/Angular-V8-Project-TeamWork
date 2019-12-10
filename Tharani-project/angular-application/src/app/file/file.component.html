@@ -1,1 +1,15 @@
 <p>File component works!</p>
+
+<mat-form-field>
+    <input matInput value="Students Data" placeholder="Message" #message>
+</mat-form-field>
+
+<mat-form-field>
+    <input matInput value="MarkSheet" placeholder="Action" #action>
+</mat-form-field>
+
+<mat-form-field>
+    <input matInput value="EnglishMark" placeholder="Marks" #data>
+</mat-form-field>
+
+<button mat-button (click)="openSnackBar(message.value,action.value)">Show snack-bar</button>
