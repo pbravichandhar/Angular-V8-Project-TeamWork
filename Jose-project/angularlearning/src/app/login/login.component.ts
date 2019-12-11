@@ -16,7 +16,11 @@ export class LoginComponent implements OnInit {
   email = '';
   password = '';
   username = '';
+  model: any = {};
 
+  onSubmit() {
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model, null, 4));
+  }
   ngOnInit() {
   }
 

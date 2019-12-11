@@ -1,0 +1,15 @@
+.image-style {
+    width: 5%;
+}
+
+.mat-toolbar.mat-warn{
+    background: #f2f2f2 !important;
+}
+
+.drawer-height {
+    height: calc(100vh - 64px);
+}
+
+.p-5 {
+    padding: 50px;
+}

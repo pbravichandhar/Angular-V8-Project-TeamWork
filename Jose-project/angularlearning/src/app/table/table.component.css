@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.nameBreak {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-word;
+    white-space: nowrap;
+}
+
+.ptb-1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

@@ -1,6 +1,10 @@
-<p (click)="sampleClick()">dashboard works!</p>
-<div>
-    <app-child-component (chileEvents)="childData=$event" [parentData]="data">
+<!-- <p (click)="sampleClick()">dashboard works!</p> -->
+<div class="pb-10">
+    <!-- <app-child-component (chileEvents)="childData=$event" [parentData]="data">
 
-    </app-child-component>
+    </app-child-component> -->
+
+    <app-table [tableData]="userData">
+
+    </app-table>
 </div>

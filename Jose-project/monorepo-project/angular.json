@@ -1,0 +1,256 @@
+{
+  "version": 1,
+  "projects": {
+    "monorepo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/monorepo",
+      "sourceRoot": "apps/monorepo/src",
+      "prefix": "monorepo-project",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/monorepo",
+            "index": "apps/monorepo/src/index.html",
+            "main": "apps/monorepo/src/main.ts",
+            "polyfills": "apps/monorepo/src/polyfills.ts",
+            "tsConfig": "apps/monorepo/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/monorepo/src/favicon.ico",
+              "apps/monorepo/src/assets"
+            ],
+            "styles": ["apps/monorepo/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/monorepo/src/environments/environment.ts",
+                  "with": "apps/monorepo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "monorepo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "monorepo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "monorepo:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/monorepo/tsconfig.app.json",
+              "apps/monorepo/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/monorepo/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/monorepo/jest.config.js",
+            "tsConfig": "apps/monorepo/tsconfig.spec.json",
+            "setupFile": "apps/monorepo/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "monorepo-e2e": {
+      "root": "apps/monorepo-e2e",
+      "sourceRoot": "apps/monorepo-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/monorepo-e2e/cypress.json",
+            "tsConfig": "apps/monorepo-e2e/tsconfig.e2e.json",
+            "devServerTarget": "monorepo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "monorepo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/monorepo-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/monorepo-e2e/**"]
+          }
+        }
+      }
+    },
+    "secondapp": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/secondapp",
+      "sourceRoot": "apps/secondapp/src",
+      "prefix": "monorepo-project",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/secondapp",
+            "index": "apps/secondapp/src/index.html",
+            "main": "apps/secondapp/src/main.ts",
+            "polyfills": "apps/secondapp/src/polyfills.ts",
+            "tsConfig": "apps/secondapp/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/secondapp/src/favicon.ico",
+              "apps/secondapp/src/assets"
+            ],
+            "styles": ["apps/secondapp/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/secondapp/src/environments/environment.ts",
+                  "with": "apps/secondapp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "secondapp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "secondapp:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "secondapp:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/secondapp/tsconfig.app.json",
+              "apps/secondapp/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/secondapp/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/secondapp/jest.config.js",
+            "tsConfig": "apps/secondapp/tsconfig.spec.json",
+            "setupFile": "apps/secondapp/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "secondapp-e2e": {
+      "root": "apps/secondapp-e2e",
+      "sourceRoot": "apps/secondapp-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/secondapp-e2e/cypress.json",
+            "tsConfig": "apps/secondapp-e2e/tsconfig.e2e.json",
+            "devServerTarget": "secondapp:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "secondapp:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/secondapp-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/secondapp-e2e/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "monorepo"
+}
