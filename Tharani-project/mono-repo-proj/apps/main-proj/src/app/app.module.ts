@@ -5,8 +5,11 @@ import { AppComponent } from './app.component';
 import {
   MatButtonModule, MatFormFieldModule,
   MatInputModule,
-  MatRippleModule
+  MatRippleModule,
+  MatTableModule
 } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http'; 
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -14,7 +17,9 @@ const modules = [
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  MatRippleModule
+  MatRippleModule,
+  MatTableModule,
+  HttpClientModule
 ];
 @NgModule({
   declarations: [AppComponent],
