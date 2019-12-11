@@ -30,6 +30,10 @@ export class AppComponent {
     form.reset();
   }
 
+  submitClicked() {
+    console.log("All users data", this.data)
+  }
+
   deleteForm(row) {
     console.log("Form deleted")
     this.data.splice(row, 1);

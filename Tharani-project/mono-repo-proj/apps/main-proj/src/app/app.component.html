@@ -42,5 +42,6 @@
       <button type="submit" mat-raised-button color="primary" class="button" id="register" [disabled]="!form.valid">Add
         Form</button>
     </div>
-  </form>
+  </form><br />
+  <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="submitClicked()">Submit</button>
 </div>
