@@ -1,0 +1,36 @@
+{
+  "npmScope": "mono-repo-proj",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "count-e2e": {
+      "tags": []
+    },
+    "count": {
+      "tags": []
+    },
+    "count-dec-e2e": {
+      "tags": []
+    },
+    "count-dec": {
+      "tags": []
+    },
+    "lib-data": {
+      "tags": []
+    },
+    "my-lib": {
+      "tags": []
+    },
+    "main-proj-e2e": {
+      "tags": []
+    },
+    "main-proj": {
+      "tags": []
+    }
+  }
+}

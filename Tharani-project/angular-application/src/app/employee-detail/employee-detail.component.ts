@@ -3,14 +3,7 @@ import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee-detail',
-  template:
-    `<h3>Employee Detail</h3>
-  <ul *ngFor="let employee of employees">
-  <li>{{employee.id}}-{{employee.name}}-{{employee.age}}</li>
-  </ul>
-  <button [routerLink]="['/dashboard']" ion-button button-icon icon-start>View List</button>
-  `,
-  // styleUrls: ['./employee-detail.component.css']
+  templateUrl: './employee-detail.component.html'
 })
 export class EmployeeDetailComponent implements OnInit {
   public employees = [];

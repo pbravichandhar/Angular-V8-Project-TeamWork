@@ -1,0 +1,46 @@
+<form id="login-form" #form="ngForm">
+  <div *ngFor="let detail of data;let i=index">
+    <p>FORM {{i}}</p>
+    <div class="form-group">
+      <label>FIRST NAME: </label>
+      <input class="form-control" [placeholder]="detail.firstname">
+    </div>
+    <div class="form-group">
+      <label>EMAIL: </label>
+      <input class="form-control" [placeholder]="detail.email">
+    </div>
+    <div class="form-group">
+      <label>AMOUNT: </label>
+      <input class="form-control" [placeholder]="detail.amount">
+    </div>
+    <button type="submit" mat-raised-button color="primary" class="button" (click)="deleteForm(i)">Delete FORM
+      {{i}}</button>
+  </div>
+</form>
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="registerUser(form)">
+    <h2>Add Users</h2>
+    <br />
+    <label>FIRST NAME</label>
+    <input type="text" class="form-control" placeholder="First Name" name="firstname" required minlength="3"
+      maxlength="5" ngModel>
+    <div class="form-group">
+      <label>EMAIL</label>
+      <input type="email" class="form-control" id="email" placeholder="Email"
+        pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" name="email" email required ngModel #email="ngModel">
+      <span *ngIf="email.touched && !email.valid ">Please enter correct Email Value</span>
+    </div>
+    <div class="form-group">
+      <label>AMOUNT</label>
+      <input type="text" class="form-control" id="amount" placeholder="Amount" name="amount" amount required
+        pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" ngModel #amount="ngModel">
+      <mat-error *ngIf="amount.hasError('pattern')">Enter a valid amount</mat-error>
+      <span *ngIf="amount.touched && !amount.valid ">Please enter correct amount Value</span>
+    </div>
+    <br />
+    <div class="align-center">
+      <button type="submit" mat-raised-button color="primary" class="button" id="register" [disabled]="!form.valid">Add
+        Form</button>
+    </div>
+  </form>
+</div>
