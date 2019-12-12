@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { throwError, Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators'
+import { HttpClient } from '@angular/common/http';
 
 interface UserDetail {
   i?: number;
@@ -47,15 +45,6 @@ export class AppComponent implements OnInit {
     return this.http.get('https://trial.mobiscroll.com/content/countries.json');
   }
 
-  getEmployees(): Observable<any> {
-    console.log("vfhb", this.http.get('https://trial.mobiscroll.com/content/countries.json'))
-    return this.http.get<any[]>('https://trial.mobiscroll.com/content/countries.json')
-      .pipe(catchError(this.errorHandler));
-  }
-
-  errorHandler(error: HttpErrorResponse) {
-    return throwError(error.message || 'Server Error')
-  }
   registerUser(form) {
     this.data.push(
       {
