@@ -21,7 +21,10 @@
               "apps/monorepo/src/favicon.ico",
               "apps/monorepo/src/assets"
             ],
-            "styles": ["apps/monorepo/src/styles.css"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/monorepo/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -80,7 +83,10 @@
               "apps/monorepo/tsconfig.app.json",
               "apps/monorepo/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/monorepo/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/monorepo/**"
+            ]
           }
         },
         "test": {
@@ -114,8 +120,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/monorepo-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/monorepo-e2e/**"]
+            "tsConfig": [
+              "apps/monorepo-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/monorepo-e2e/**"
+            ]
           }
         }
       }
@@ -140,7 +151,9 @@
               "apps/secondapp/src/favicon.ico",
               "apps/secondapp/src/assets"
             ],
-            "styles": ["apps/secondapp/src/styles.css"],
+            "styles": [
+              "apps/secondapp/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -199,7 +212,10 @@
               "apps/secondapp/tsconfig.app.json",
               "apps/secondapp/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/secondapp/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/secondapp/**"
+            ]
           }
         },
         "test": {
@@ -233,8 +249,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/secondapp-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/secondapp-e2e/**"]
+            "tsConfig": [
+              "apps/secondapp-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/secondapp-e2e/**"
+            ]
           }
         }
       }

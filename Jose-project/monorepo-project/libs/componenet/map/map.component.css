@@ -1,0 +1,28 @@
+.match-parent {
+    width: 100vh;
+    height: 100vh;
+}
+
+.marker {
+    display: block;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    background-image: url("https://image.flaticon.com/icons/svg/121/121383.svg");
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+

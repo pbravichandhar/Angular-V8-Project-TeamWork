@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'monorepo';
+  title = 'monorepo'
+
+  clickme2 (e) {
+    e.preventdefault()
+  }
+ 
+  clickme1 () {
+    console.log('1')
+  }
 }
