@@ -25,6 +25,10 @@ import { FileComponent } from './file/file.component';
 import { EditComponent } from './edit/edit.component';
 import { RouterModule, Routes } from "@angular/router";
 import { CustomMaterialModule } from "./core/material.module";
+import { MapComponent } from './map/map.component';
+import { AdminComponent } from './dashboard/admin/admin.component';
+import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: FileComponent, data: { title: 'File Component' } },
@@ -52,6 +56,10 @@ const modules = [
     NavigationComponent,
     FileComponent,
     EditComponent,
+    MapComponent,
+    AdminComponent,
+    LoginComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
