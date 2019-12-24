@@ -1,47 +1,62 @@
 <form id="login-form" #form="ngForm">
   <div *ngFor="let detail of data;let i=index">
-    <p>FORM {{i}}</p>
+    <p>ADDRESS {{i}}</p>
     <div class="form-group">
-      <label>FIRST NAME: </label>
-      <input class="form-control" [placeholder]="detail.firstname">
+      <h4>Street number and street name*</h4>
+      <input [placeholder]="detail.street" readonly>
+      <label>State*</label>
+      <input [placeholder]="detail.state" readonly>
+      <h4>Suite number</h4>
+      <input [placeholder]="detail.suite" readonly>
+      <label>Zip code*</label>
+      <input [placeholder]="detail.zip" readonly>
+      <h4>City*</h4>
+      <input [placeholder]="detail.city" readonly>
+      <label>Country*</label>
+      <input [placeholder]="detail.country" readonly><br />
+      <button type="submit" mat-raised-button color="primary" class="button" (click)="deleteForm(i)">Delete ADDRESS
+        {{i}}</button>
     </div>
-    <div class="form-group">
-      <label>EMAIL: </label>
-      <input class="form-control" [placeholder]="detail.email">
-    </div>
-    <div class="form-group">
-      <label>AMOUNT: </label>
-      <input class="form-control" [placeholder]="detail.amount">
-    </div>
-    <button type="submit" mat-raised-button color="primary" class="button" (click)="deleteForm(i)">Delete FORM
-      {{i}}</button>
   </div>
 </form>
+
 <div class="container">
   <form #form="ngForm" (ngSubmit)="registerUser(form)">
-    <h2>Add Users</h2>
+
+    <h1>ASSET LOCATIONS</h1>
     <br />
-    <label>FIRST NAME</label>
-    <input type="text" class="form-control" placeholder="First Name" name="firstname" required minlength="3"
-      maxlength="5" ngModel>
-    <div class="form-group">
-      <label>EMAIL</label>
-      <input type="email" class="form-control" id="email" placeholder="Email"
-        pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" name="email" email required ngModel #email="ngModel">
-      <span *ngIf="email.touched && !email.valid ">Please enter correct Email Value</span>
-    </div>
-    <div class="form-group">
-      <label>AMOUNT</label>
-      <input type="text" class="form-control" id="amount" placeholder="Amount" name="amount" amount required
-        pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" ngModel #amount="ngModel">
-      <mat-error *ngIf="amount.hasError('pattern')">Enter a valid amount</mat-error>
-      <span *ngIf="amount.touched && !amount.valid ">Please enter correct amount Value</span>
-    </div>
-    <br />
+    <input type="text" placeholder="Enter address to auto fill" name="addressBar" ngModel>
+    <h4>Street number and street name*</h4>
+    <input type="text" placeholder="Street number and street name" name="street" required ngModel>
+    <label>State*</label>
+    <input type="text" id="state" placeholder="State" name="state" state required ngModel #state="ngModel">
+    <span *ngIf="state.touched && !state.valid ">Please enter state Value</span>
+    <h4>Suite number
+    </h4>
+    <input type="text" id="suite" placeholder="Suite number" name="suite" suite ngModel #suite="ngModel">
+    <label>Zip code*</label>
+    <input type="text" id="zip" placeholder="Zip code" name="zip" zip required ngModel #zip="ngModel" minLength="5"
+      maxLength="7" pattern="^\d{5}(?:\d{2})?$">
+    <span *ngIf="zip.touched && !zip.valid ">Please enter zip code</span>
+    <h4>City*</h4>
+    <input type="text" id="city" placeholder="City" name="city" city required ngModel #suite="ngModel">
+    <span *ngIf="suite.touched && !suite.valid ">Please select city</span>
+
+    <label>Country</label>
+    <select id="country" placeholder="Country" name="country" country required ngModel #country="ngModel"
+      placeholder='enter country'>
+      <option *ngFor="let countries of countryData">{{countries.text}}</option>
+    </select>
+
     <div class="align-center">
       <button type="submit" mat-raised-button color="primary" class="button" id="register" [disabled]="!form.valid">Add
-        Form</button>
+        another address</button>
     </div>
-  </form><br />
+  </form>
+  <br />
   <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="submitClicked()">Submit</button>
+  <input type="file" (change)="upload($event.target.files)" />
+  <ng-container *ngIf="uploadSuccess">
+    Upload Successful
+  </ng-container>
 </div>
